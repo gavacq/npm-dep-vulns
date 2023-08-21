@@ -2,11 +2,11 @@ job:
   package-manager: npm_and_yarn
   allowed-updates:
     - update-type: all
-  security-updates-only: true
+  # security-updates-only: true
   ignore-conditions:
     - dependency-name: '@sparelabs/*'
-  # dependencies:
-  #   - protobufjs
+  dependencies:
+    - optimist
 #   security-advisories:
 #     - dependency-name: protobufjs
 #       advisory-id: GHSA-h755-8qp9-cq85

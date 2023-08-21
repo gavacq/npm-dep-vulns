@@ -1,0 +1,31 @@
+input:
+    job:
+        package-manager: npm_and_yarn
+        allowed-updates:
+            - update-type: all
+        ignore-conditions:
+            - dependency-name: '@sparelabs/*'
+        security-updates-only: true
+        source:
+            provider: github
+            repo: gavacq/npm-deps-vuln
+            directory: /
+            commit: unknown
+        credentials-metadata:
+            - host: github.com
+              type: git_source
+    credentials:
+        - host: github.com
+          password: $LOCAL_GITHUB_ACCESS_TOKEN
+          type: git_source
+          username: x-access-token
+output:
+    - type: record_update_job_error
+      expect:
+        data:
+            error-type: job_repo_not_found
+            error-details: {}
+    - type: mark_as_processed
+      expect:
+        data:
+            base-commit-sha: unknown

@@ -14,6 +14,6 @@ job:
 #         - ">= 6.10.0, < 6.11.4"
   source:
     provider: github
-    repo: gavacq/npm-deps-vuln
+    repo: gavacq/npm-dep-vulns
     directory: /
   # updating-a-pull-request: true

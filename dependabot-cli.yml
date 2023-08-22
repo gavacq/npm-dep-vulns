@@ -1,12 +1,12 @@
 job:
   package-manager: npm_and_yarn
   allowed-updates:
-    - update-type: all
-  security-updates-only: true
+    - update-type: security
+  # security-updates-only: true
+  experiments:
+    npm-transitive-security-updates: true
   ignore-conditions:
     - dependency-name: '@sparelabs/*'
-  dependencies:
-    - react-scripts
 #   security-advisories:
 #     - dependency-name: protobufjs
 #       advisory-id: GHSA-h755-8qp9-cq85
